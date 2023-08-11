@@ -6,13 +6,8 @@ function App() {
 
   return (
     <main>
-      <h3>Popup Page!</h3>
-
-      <h6>v 0.0.0</h6>
-
-      <a href="https://www.npmjs.com/package/create-chrome-ext" target="_blank">
-        Power by {crx}
-      </a>
+      <h3>Short It!</h3>
+      <h6>v 1.0.0</h6>
     </main>
   )
 }

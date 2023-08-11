@@ -1,0 +1,101 @@
+ytd-reel-video-renderer .custom-video-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+ytd-reel-video-renderer:hover .custom-video-controls {
+  opacity: 1;
+}
+
+.custom-video-controls {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.buttons-container button {
+  width: 64px;
+  height: 64px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.buttons-container button.Forward,
+.buttons-container button.Rewind {
+  width: 40px;
+  height: 40px;
+}
+
+.buttons-container button img {
+  width: 100%;
+  height: auto;
+  transition: all 300ms ease-in-out;
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+.buttons-container button:hover img {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(204%) contrast(97%);
+}
+
+.custom-volume-bar {
+  right: -65px;
+  top: 110px;
+  width: 20rem;
+  top: 130px;
+  transform: rotate(-90deg);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  cursor: row-resize;
+}
+
+.custom-progress-bar {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  z-index: 2;
+}
+
+.custom-volume-bar,
+.custom-progress-bar > input {
+  -webkit-appearance: none;
+  position: absolute;
+  left: unset;
+  margin: 0;
+  padding: 0;
+  height: 21px;
+  /* transform: translate(-50%, -50%) rotate(-90deg); */
+  overflow: hidden;
+  position: absolute;
+}
+
+.custom-progress-bar > input::-webkit-slider-thumb,
+.custom-volume-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  box-shadow: -20rem 0 0 20rem rgba(255, 255, 255, 0.5);
+}
+.custom-progress-bar > input::-webkit-slider-thumb {
+  box-shadow: -30rem 0 0 30rem rgba(180, 14, 14, 0.917);
+}
+.custom-progress-bar > input::-moz-range-thumb,
+.custom-volume-bar::-moz-range-thumb {
+  border: none;
+  width: 0;
+  box-shadow: -20rem 0 0 20rem rgba(255, 255, 255, 0.2);
+}
+
+.custom-progress-bar input {
+  width: 100%;
+  background-color: rgba(151, 83, 83, 0.832);
+  cursor: col-resize;
+}
+
+ytd-reel-video-renderer:not([showing-expanded-overlay]) .overlay.ytd-reel-video-renderer {
+  z-index: 1 !important;
+}

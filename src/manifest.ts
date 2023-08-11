@@ -2,18 +2,16 @@ import { defineManifest } from '@crxjs/vite-plugin'
 
 export default defineManifest({
   name: 'short-it',
-  description: '',
-  version: '0.0.0',
+  description:
+    'Take control of YouTube shorts. Play, pause, fast forward, rewind, adjust volume, and easily navigate video timelines. ',
+  version: '1.0.0',
   manifest_version: 3,
   icons: {
-    '16': 'img/logo-16.png',
-    '32': 'img/logo-34.png',
-    '48': 'img/logo-48.png',
-    '128': 'img/logo-128.png',
+    '128': 'icons/logo.png',
   },
   action: {
     default_popup: 'popup.html',
-    default_icon: 'img/logo-48.png',
+    default_icon: 'icons/logo.png',
   },
   options_page: 'options.html',
   background: {
@@ -22,9 +20,9 @@ export default defineManifest({
   },
   content_scripts: [
     {
-      matches: ['https://www.youtube.com/shorts/*', 'https://www.youtube.com/shorts/*'],
+      matches: ['https://www.youtube.com/*', 'https://www.youtube.com/*'],
       js: ['src/content/index.ts'],
-      css:['src/content/reelupstyles.css']
+      // css: ['./index.ts.*'],
     },
   ],
   web_accessible_resources: [
@@ -33,5 +31,5 @@ export default defineManifest({
       matches: [],
     },
   ],
-  permissions: [],
+  permissions: ['tabs', 'storage'],
 })

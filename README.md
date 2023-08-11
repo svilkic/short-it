@@ -1,6 +1,6 @@
-# shorts-up
+# shorts-it
 
-> a chrome extension tools built with Vite + React-ts, and Manifest v3
+> a chrome extension tool built for adding controls to youtube shorts
 
 ## Installing
 
